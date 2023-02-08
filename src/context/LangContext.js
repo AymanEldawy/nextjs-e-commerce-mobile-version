@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 
 export const LanguageContext = createContext();
 export const LangContextProvider = ({ children }) => {
-  const [lang, setLang] = useState('ar');
+  const [lang, setLang] = useState('en');
   const changeLang = () => setLang(() => (lang === 'ar' ? 'en' : 'ar'));
   useEffect(() => {
     const dir = lang === 'ar' ? 'rtl' : 'ltr';

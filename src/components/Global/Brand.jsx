@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export const Brand = ({ invert }) => {
+export const Brand = ({ invert, width }) => {
   return (
     <Link href="/">
       {invert ? (
@@ -19,7 +19,7 @@ export const Brand = ({ invert }) => {
         </svg>
       ) : (
         <svg
-          width="169"
+          width={width ? width : '169'}
           height="41"
           viewBox="0 0 169 41"
           fill="none"

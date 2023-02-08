@@ -18,10 +18,10 @@ export const Breadcrumb = ({ paths }) => {
             <ChevronIcon />
           </span>
           {index === spratsPath?.length - 1 ? (
-            fetchWord(path, lang)
+            fetchWord(path, lang) || [path]
           ) : (
             <Link className="capitalize" href={`/${path}`}>
-              {fetchWord(path, lang)}
+              {fetchWord(path, lang) || path}
             </Link>
           )}
         </>

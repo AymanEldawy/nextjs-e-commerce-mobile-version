@@ -17,7 +17,7 @@ export const LoginForm = () => {
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <InputField
         style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-        label={fetchWord('email_label')}
+        label={fetchWord('email_label', lang)}
         type="email"
         name="email"
         placeholder={fetchWord('email_place_holder', lang)}

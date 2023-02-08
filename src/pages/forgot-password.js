@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext , useState} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
 import { LanguageContext } from './../context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
+import { InputField } from './../components/Forms/InputField';
 const ForgotPassword = () => {
   const { lang } = useContext(LanguageContext);
+  const [email, setEmail] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Head>
@@ -15,46 +20,34 @@ const ForgotPassword = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
-        <figure className="my-8 text-center">
-          <Image
-            className="max-w-full object-contain !w-auto mx-auto"
-            src="/images/forgot-password.png"
-            alt="forgot password"
-            height={200}
-            width={1500}
-          />
-        </figure>
-        <div className="container">
-          <div className="flex flex-col items-center justify-center gap-3 text-primary mb-8">
-            <h1 className="text-primary w- text-4xl mb-2 text-center">
-              {fetchWord('forget_password_text', lang)}
-            </h1>
-            <p className="text-sm text-tprimary">
-              {fetchWord('send_code', lang)}
-            </p>
-            <div className="flex items-center gap-4 mb-8 justify-center">
-              <span className="h-[2px] w-40 bg-primary flex-1"></span>{' '}
-              <h3 className="text-2xl font-normal text-primary">
-                {fetchWord('with', lang)}
-              </h3>
-              <span className="h-[2px] w-40 bg-primary flex-1"></span>
-            </div>
-            <PrimaryButton
-              classes="w-72 !py-2 rounded-lg"
-              text={fetchWord('Mobile_number', lang)}
-            />
-            <PrimaryButton
-              classes="w-72 !py-2 rounded-lg"
-              text={fetchWord('email', lang)}
-            />
-            <span className="w-3 block mx-auto my-6">
-              {fetchWord('or', lang)}
-            </span>
-            <LoginWithSocialAccount />
+
+      <div className="mobile-container">
+        <div className="flex gap-4 flex-col">
+          <div className="">
+            <h1 className="text-2xl mb-4 font-semibold">Forget Password</h1>
+            <p className="text-sm mb-4 text-[#00000099]">Please enter Your Mail</p>
           </div>
+          <form onSubmit={handleSubmit}>
+            <InputField
+              style={{
+                border: '2px solid #E5E5E5',
+                background: '#0000000D',
+                padding: '12px',
+              }}
+              label={fetchWord('email_label', lang)}
+              type="email"
+              name="email"
+              placeholder={fetchWord('email_label', lang)}
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+
+            <PrimaryButton
+              text={fetchWord('send_code', lang)}
+              classes="w-full rounded-lg !py-4 mx-auto mt-24"
+            />
+          </form>
         </div>
-        <div className="h-16" />
       </div>
     </>
   );

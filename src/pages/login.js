@@ -4,12 +4,18 @@ import { SectionTitle } from './../components/Global/SectionTitle';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
 import { LoginForm } from './../components/Forms/LoginForm';
 import { fetchWord } from '@/lang/fetchWord';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LanguageContext } from './../context/LangContext';
-
+import { InputField } from './../components/Forms/InputField';
+import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
+import Link from 'next/link';
 export default function Login() {
   const { lang } = useContext(LanguageContext);
-  // props?.locale
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Head>
@@ -18,31 +24,69 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex gap-4">
-        <figure className="full-image-login flex-1">
-          <Image
-            src="/images/login.jpg"
-            alt={fetchWord('login', lang)}
-            height={500}
-            width={500}
-          />
-        </figure>
-        <div className="flex flex-col p-8 flex-1">
-          <SectionTitle title={fetchWord('login', lang)} />
-          <p className="text-xs text-[#949494] -mt-3">
-            {fetchWord('auth_message', lang)}
-          </p>
-          <div className="w-full my-4">
-            <LoginWithSocialAccount />
+      <div className="mobile-container">
+        <div className="flex gap-4 flex-col">
+          <div className="">
+            <h1 className="text-2xl mb-4 font-semibold">Sign In</h1>
+            <p className="text-sm mb-4 text-[#00000099]">
+              Welcome back
+            </p>
           </div>
-          <div className="flex items-center gap-4 mb-8 justify-center w-11/12 mx-auto">
+          <form onSubmit={handleSubmit}>
+            <InputField
+              style={{
+                border: '2px solid #E5E5E5',
+                background: '#0000000D',
+                padding: '12px',
+              }}
+              label={fetchWord('email_label', lang)}
+              type="email"
+              name="email"
+              placeholder={fetchWord('email_label', lang)}
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+
+            <InputField
+              style={{
+                border: '2px solid #E5E5E5',
+                background: '#0000000D',
+                padding: '12px',
+              }}
+              label={fetchWord('password_label', lang)}
+              type="password"
+              name="password"
+              placeholder={fetchWord('password_label', lang)}
+              value={password}
+              handleChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="relative mb-3">
+              <Link href="/forget-password" className="text-[#00000099]">
+                {fetchWord('forget_password_text', lang)}
+              </Link>
+            </div>
+            <PrimaryButton
+              text={fetchWord('login', lang)}
+              classes="w-full rounded-lg !py-4 mx-auto "
+            />
+          </form>
+          <div className="flex items-center gap-4 mb-4 justify-center w-11/12 mx-auto">
             <span className="h-[2px] w-40 bg-[#E6E6E6] flex-1"></span>{' '}
-            <h3 className="text-lg font-normal text-[#E6E6E6]">
-              {fetchWord('or', lang)}
-            </h3>
+            <h3 className=" font-normal ">{fetchWord('or', lang)}</h3>
             <span className="h-[2px] w-40 bg-[#E6E6E6] flex-1"></span>
           </div>
-          <LoginForm />
+          <div className="w-full my-4 !mt-2">
+            <LoginWithSocialAccount />
+          </div>
+          <p className="text-center text-[#4A4844] text-sm mb-4">
+            Don’t Have An Account?
+            <Link
+              href="signup"
+              className="mx-1 underline text-black font-medium"
+            >
+              Sign Up
+            </Link>
+          </p>
         </div>
       </div>
     </>

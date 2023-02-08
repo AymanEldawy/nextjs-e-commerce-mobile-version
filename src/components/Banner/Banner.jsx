@@ -15,29 +15,9 @@ export const Banner = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     className: 'relative',
-    responsive: [
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          centerPadding: '72px',
-        },
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          initialSlide: 2,
-          slidesToScroll: 2,
-          arrows: false,
-        },
-      },
-    ],
   };
   return (
     <div className="relative">
@@ -45,7 +25,7 @@ export const Banner = () => {
         <Slider {...setting}>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className='p-1'
+              className="p-1"
               src="/images/home/hero-1.png"
               alt="logo"
               width="480"
@@ -54,7 +34,7 @@ export const Banner = () => {
           </figure>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className='p-1'
+              className="p-1"
               src="/images/home/hero-3.jpg"
               alt="logo"
               width="480"
@@ -63,7 +43,7 @@ export const Banner = () => {
           </figure>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className='p-1'
+              className="p-1"
               src="/images/home/hero-3.jpg"
               alt="logo"
               width="480"

@@ -29,7 +29,7 @@ export default function Home() {
       <Layout>
         <Banner />
         <OfferSection />
-        <FeaturedProductSection
+        {/* <FeaturedProductSection
           title={fetchWord('FEATURED_PRODUCTS', lang)}
           products={products}
         />
@@ -41,7 +41,7 @@ export default function Home() {
         />
         <OurFeatures title={fetchWord('Our_Features', lang)} center />
         <Brands title={fetchWord('Brands', lang)} />
-        <Testimonial title={fetchWord('Testimonial', lang)} />
+        <Testimonial title={fetchWord('Testimonial', lang)} /> */}
       </Layout>
     </>
   );

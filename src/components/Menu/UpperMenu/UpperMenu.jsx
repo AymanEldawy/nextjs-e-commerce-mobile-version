@@ -13,8 +13,8 @@ export const UpperMenu = () => {
 
   return (
     <div className="bg-primary h-[53px] text-white">
-      <div className="container items-center flex justify-between h-full">
-        <div className="flex items-center gap-2">
+      <div className="container items-center flex justify-between h-full flex-wrap gap-4">
+        <div className="flex items-center gap-2 ">
           <FreeShippingIcon />
           {fetchWord('upper_menu_free_shipping', lang)}
         </div>

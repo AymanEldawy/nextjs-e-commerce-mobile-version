@@ -18,12 +18,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: #ffffff;
-  /* background-color: #e4e4e4; */
+  background-color: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  /* height: 5000px; */
 }
+
 .container {
   max-width: var(--max-width) !important;
   margin: 0 auto;
@@ -112,4 +116,27 @@ div:has(select:required) label::before {
   height: 2px;
   width: 100%;
   background-color: #666666;
+}
+
+/* Mobile */
+
+.mobile-container {
+  position: relative;
+  background-color: #fff;
+  width: 375px;
+  padding: 1rem;
+  /* max-width: 375px; */
+  /* overflow-x: hidden; */
+  margin: 0 auto;
+  height: 90vh;
+  padding-top: 50px;
+  overflow-y: auto;
+}
+.mobile-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.icon-shadow{
+  box-shadow: 0px 22px 40px rgba(0, 0, 0, 0.1);
 }

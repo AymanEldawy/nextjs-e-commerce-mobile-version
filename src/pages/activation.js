@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { SectionTitle } from './../components/Global/SectionTitle';
@@ -15,48 +15,40 @@ const Activation = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex gap-4">
-        <figure className="full-image-login flex-1">
-          <Image
-            src="/images/login.jpg"
-            alt={fetchWord('verification', lang)}
-            height={500}
-            width={500}
-          />
-        </figure>
-        <div className="flex flex-col p-8 flex-1">
-          <SectionTitle title={fetchWord('verification', lang)} />
-          <div className="h-14" />
-          <div className="flex flex-col gap-6 items-center">
-            <p className="text-md">
-              {fetchWord('code_activation', lang)} +0123456789
+
+      <div className="mobile-container">
+        <div className="flex gap-4 flex-col">
+          <div className="">
+            <h1 className="text-2xl mb-4 font-semibold">Verify Your Mail</h1>
+            <p className="text-sm mb-4 text-[#00000099]">
+              Please Enter 4-Digit Sent to your Mail
             </p>
-            <div className="flex gap-4">
-              <input
-                className="w-32 rounded-sm h-10 border-2 border-[#E5E5E5]"
-                type="tel"
-              />
-              <input
-                className="w-32 rounded-sm h-10 border-2 border-[#E5E5E5]"
-                type="tel"
-              />
-              <input
-                className="w-32 rounded-sm h-10 border-2 border-[#E5E5E5]"
-                type="tel"
-              />
-              <input
-                className="w-32 rounded-sm h-10 border-2 border-[#E5E5E5]"
-                type="tel"
-              />
-            </div>
-            <PrimaryButton
-              text={fetchWord('verify', lang)}
-              classes="max-w-[300px] w-full rounded-lg !py-3 mx-auto "
-            />
-            <button className="text-[#5177FD] underline block text-center">
-              {fetchWord('resend_code', lang)}
-            </button>
           </div>
+          <div className="flex gap-4 justify-between items-center mt-6">
+            <input
+              className="w-16 h-14 rounded-md border-2 bg-[#D9D9D980] text-center text-2xl focus:border-primary text-primary border-[#E5E5E5]"
+              type="tel"
+            />
+            <input
+              className="w-16 h-14 rounded-md border-2 bg-[#D9D9D980] text-center text-2xl focus:border-primary text-primary border-[#E5E5E5]"
+              type="tel"
+            />
+            <input
+              className="w-16 h-14 rounded-md border-2 bg-[#D9D9D980] text-center text-2xl focus:border-primary text-primary border-[#E5E5E5]"
+              type="tel"
+            />
+            <input
+              className="w-16 h-14 rounded-md border-2 bg-[#D9D9D980] text-center text-2xl focus:border-primary text-primary border-[#E5E5E5]"
+              type="tel"
+            />
+          </div>
+          <button className="text-primary underline block text-center mb-8 mt-4">
+            Resend Code
+          </button>
+          <PrimaryButton
+            text={fetchWord('verify', lang)}
+            classes="max-w-[300px] w-full rounded-lg !py-3 mx-auto "
+          />
         </div>
       </div>
     </>
