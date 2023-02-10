@@ -6,6 +6,7 @@ import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
 import { CartTotal } from './../components/CartComponents/CartTotal';
 import { TableCart } from './../components/CartComponents/TableCart';
 import { Layout } from './../components/Layout/Layout';
+import { FormPromoCode } from './../components/CartComponents/FormPromoCode';
 
 export default function Home() {
   const [cart, setCart] = useState([]);
@@ -21,10 +22,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <div className="container">
-          <Breadcrumb paths="cart" />
+      <Layout title="Cart">
+        <div className="mb-32">
           <TableCart cart={cart} />
+          <FormPromoCode />
           <CartTotal cart={cart} />
         </div>
       </Layout>

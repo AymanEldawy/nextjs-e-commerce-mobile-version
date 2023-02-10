@@ -5,7 +5,7 @@ export const CardWishlist = () => {
   const [inWishlist, setInWishlist] = useState(false);
   return (
     <button
-      className="absolute right-4 top-4 rtl:left-4 rtl:right-auto"
+      className="absolute right-3 top-3 rtl:left-4 rtl:right-auto scale-75"
       onClick={() => setInWishlist(!inWishlist)}
     >
       <HeartIcon color={inWishlist ? '#f00' : ''} />

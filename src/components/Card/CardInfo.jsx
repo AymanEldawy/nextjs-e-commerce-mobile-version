@@ -1,10 +1,14 @@
 import React from 'react';
+import { CardRate } from './CardRate';
 
-export const CardInfo = ({ title, category, inCategory }) => {
+export const CardInfo = ({ title, category, rating }) => {
   return (
     <>
-      {inCategory ? null : <p>{category}</p>}
-      <h3>{title}</h3>
+      <div className="flex">
+        <p className='text-xs mx-[1px]'>{category}</p>
+        <CardRate rating={rating} />
+      </div>
+      <h3 className='text-sm font-medium'>{title}</h3>
     </>
   );
 };

@@ -1,19 +1,18 @@
-import Head from 'next/head';
-import { products } from '@/data/cardData';
-
-import { Banner } from './../components/Banner/Banner';
-import { Layout } from './../components/Layout/Layout';
-import { OfferSection } from './../components/OfferSection/OfferSection';
-import { FeaturedProductSection } from './../components/FeaturedProductSection/FeaturedProductSection';
-import { BrowseOurCategories } from './../components/BrowseOurCategories/BrowseOurCategories';
-import { WinterCollectionBanner } from './../components/WinterCollectionBanner/WinterCollectionBanner';
-import { OurFeatures } from './../components/OurFeatures/OurFeatures';
-import { Brands } from './../components/Brands/Brands';
-import { Testimonial } from './../components/Testimonial/Testimonial';
 import { fetchWord } from '@/lang/fetchWord';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
+
+import { Banner } from './../components/Banner/Banner';
+import { BrowseOurCategories } from './../components/BrowseOurCategories/BrowseOurCategories';
+import { Layout } from './../components/Layout/Layout';
+import { OfferSection } from './../components/OfferSection/OfferSection';
+import { OurFeatures } from './../components/OurFeatures/OurFeatures';
+import { Testimonial } from './../components/Testimonial/Testimonial';
+import { WinterCollectionBanner } from './../components/WinterCollectionBanner/WinterCollectionBanner';
 import { LanguageContext } from './../context/LangContext';
+import { FeaturedProductGrid } from './../components/BrowseOurCategories/FeaturedProductGrid';
+import { products } from '@/data/cardData';
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -28,13 +27,16 @@ export default function Home() {
       </Head>
       <Layout>
         <Banner />
-        <OfferSection />
-        {/* <FeaturedProductSection
-          title={fetchWord('FEATURED_PRODUCTS', lang)}
-          products={products}
-        />
-        <BrowseOurCategories title={fetchWord('Browse_Our_Categories', lang)} />
+        <BrowseOurCategories title={fetchWord('FEATURED_PRODUCTS', lang)} />
         <WinterCollectionBanner />
+        <div className="my-4" />
+        <FeaturedProductGrid products={products} />
+        {/* <OfferSection /> */}
+        {/* <FeaturedProductSection
+          title={fetchWord('Browse_Our_Categories', lang)}
+          products={products}
+        /> */}
+        {/* 
         <FeaturedProductSection
           title={fetchWord('New_Arrivals', lang)}
           products={products}

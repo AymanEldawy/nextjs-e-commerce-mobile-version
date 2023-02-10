@@ -12,7 +12,7 @@ export const Reviews = () => {
         <ReviewCard />
         <ReviewCard />
       </div>
-      <ReviewForm />
+      {/* <ReviewForm /> */}
     </div>
   );
 };

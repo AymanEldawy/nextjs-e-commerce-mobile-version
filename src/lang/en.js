@@ -158,7 +158,7 @@ export const en = {
   Order_note: 'Order note',
   Next: 'Next',
   Town: 'Town',
-  Country_Region: '"Country / Region"',
+  Country_Region: 'Country / Region',
   Pay_With: 'Pay With',
   Cash: 'Cash',
   Card: 'Card',

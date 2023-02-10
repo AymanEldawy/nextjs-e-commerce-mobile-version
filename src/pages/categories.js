@@ -1,26 +1,26 @@
 import { products } from '@/data/cardData';
-import React, { useContext } from 'react';
+import { fetchWord } from '@/lang/fetchWord';
+import { useRouter } from 'next/router';
+import React, { useContext, useEffect } from 'react';
 
 import { Breadcrumb } from '../components/Breadcrumb/Breadcrumb';
-import { CategoryBanner } from '../components/Categories/CategoryBanner';
 import { CategorySidebar } from '../components/Categories/CategorySidebar';
 import { Layout } from '../components/Layout/Layout';
 import { CategoriesGrid } from './../components/Categories/CategoriesGrid';
-import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../context/LangContext';
 
-const Categories = () => {
+const Categories = (props) => {
   const { lang } = useContext(LanguageContext);
+  const router = useRouter();
+  useEffect(() => {
+    console.log(props);
+    console.log(router);
+    // setTitle('Categories');
+  }, []);
   return (
-    <Layout>
-      <div className="container !mb-4">
-        <CategoryBanner />
-        <Breadcrumb paths="category/fashion" />
-        <div className="flex gap-4">
-          <CategorySidebar />
-          <CategoriesGrid items={products} itemsPerPage={12} />
-        </div>
-      </div>
+    <Layout hideBottomMenu title="Categories" back> 
+      <CategorySidebar />
+      {/* <CategoriesGrid items={products} itemsPerPage={12} /> */}
     </Layout>
   );
 };

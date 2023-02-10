@@ -2,10 +2,10 @@ import React from 'react';
 
 import { CheckIcon } from './../Icons/CheckIcon';
 
-export const CategoryColorsFilter = () => {
+export const CategoryColorsFilter = ({ title }) => {
   return (
-    <div className=" p-4 lg:px-8">
-      <h3 className="text-primary mb-6 font-semibold text-xl">Colors</h3>
+    <div className="my-4 pb-4">
+      <h3 className="text-tprimary mb-4 font-semibold text-base">{title}</h3>
       <div className="flex gap-2">
         <span className="flex items-center justify-center rounded-full h-8 w-8 bg-primary">
           <CheckIcon />

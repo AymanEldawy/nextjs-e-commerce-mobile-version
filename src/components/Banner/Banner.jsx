@@ -17,15 +17,15 @@ export const Banner = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    className: 'relative',
+    className: 'relative h-full',
   };
   return (
-    <div className="relative">
-      <div className="gap-2 max-h-[474px] overflow-hidden ">
+    <div className="relative h-[300px]">
+      <div className="gap-2  overflow-hidden ">
         <Slider {...setting}>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className="p-1"
+              className="p-1 h-[300px] object-cover w-full"
               src="/images/home/hero-1.png"
               alt="logo"
               width="480"
@@ -34,7 +34,7 @@ export const Banner = () => {
           </figure>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className="p-1"
+              className="p-1 h-[300px] object-cover w-full"
               src="/images/home/hero-3.jpg"
               alt="logo"
               width="480"
@@ -43,7 +43,7 @@ export const Banner = () => {
           </figure>
           <figure className={`${Styles.banner_img} flex-1`}>
             <Image
-              className="p-1"
+              className="p-1 h-[300px] object-cover w-full"
               src="/images/home/hero-3.jpg"
               alt="logo"
               width="480"

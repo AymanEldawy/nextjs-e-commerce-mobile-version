@@ -6,11 +6,13 @@ import { TextField } from './../Forms/TextField';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../../context/LangContext';
+import { InputFieldMobile } from './../Forms/InputFieldMobile';
+import { SelectFieldMobile } from './../Forms/SelectFieldMobile';
 
 export const BillingDetails = ({ nextStageHandler }) => {
   const { lang } = useContext(LanguageContext);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [address, setAddress] = useState('');
   const [country, setCountry] = useState('');
   const [town, setTown] = useState('');
   const [street, setStreet] = useState('');
@@ -27,57 +29,43 @@ export const BillingDetails = ({ nextStageHandler }) => {
   ];
   return (
     <div className="mt-8">
-      <SectionTitle title="Billing Details" />
+      <h3 className='text-primary font-medium text-base mb-4'>Shipping</h3>
       <form className="flex flex-col mb-8" onSubmit={handleSubmit}>
-        <div className="flex gap-4">
-          <InputField
-            value={firstName}
-            handleChange={(e) => setFirstName(e.target.value)}
-            type="text"
-            label={fetchWord('first_name_label', lang)}
-            required
-          />
-          <InputField
-            value={lastName}
-            handleChange={(e) => setLastName(e.target.value)}
-            type="text"
-            label={fetchWord('last_name_label', lang)}
-            required
-          />
-        </div>
-        <SelectField
+        <InputFieldMobile
+          value={fullName}
+          handleChange={(e) => setFullName(e.target.value)}
+          type="text"
+          label={fetchWord('first_name_label', lang)}
+        />
+        <InputFieldMobile
+          value={address}
+          handleChange={(e) => setAddress(e.target.value)}
+          type="text"
+          label="address"
+        />
+        <InputFieldMobile
+          value={address}
+          handleChange={(e) => setAddress(e.target.value)}
+          type="text"
+          label="city"
+        />
+        <InputFieldMobile
+          value={address}
+          handleChange={(e) => setAddress(e.target.value)}
+          type="text"
+          label="State/Province/Region"
+        />
+        <InputFieldMobile
+          value={address}
+          handleChange={(e) => setAddress(e.target.value)}
+          type="text"
+          label="Zip Code (Postal Code)"
+        />
+        <SelectFieldMobile
           value={country}
           handleChange={(e) => setCountry(e.target.value)}
           label={fetchWord('Country_Region', lang)}
           list={countries}
-          required
-        />
-        <SelectField
-          value={town}
-          handleChange={(e) => setTown(e.target.value)}
-          label={fetchWord('Town', lang)}
-          list={countries}
-          required
-        />
-        <SelectField
-          value={street}
-          handleChange={(e) => setStreet(e.target.value)}
-          label={fetchWord('Street_address', lang)}
-          list={countries}
-          required
-        />
-        <InputField
-          value={phone}
-          handleChange={(e) => setPhone(e.target.value)}
-          type="tel"
-          label={fetchWord('Phone', lang)}
-          required
-        />
-        <TextField
-          value={orderNote}
-          handleChange={(e) => setOrderNote(e.target.value)}
-          label={fetchWord('Order_note', lang)}
-          classes="border-[#A0A0A0] min-h-[170px]"
         />
         <PrimaryButton
           type="button"

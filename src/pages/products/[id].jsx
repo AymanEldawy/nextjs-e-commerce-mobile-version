@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { Layout } from './../../components/Layout/Layout';
-import { Breadcrumb } from './../../components/Breadcrumb/Breadcrumb';
-import { SingleProductDetails } from './../../components/SingleProduct/SingleProductDetails';
 import { getItemById } from '@/data/cardData';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+
+import { Breadcrumb } from './../../components/Breadcrumb/Breadcrumb';
+import { Layout } from './../../components/Layout/Layout';
+import { SingleProductDetails } from './../../components/SingleProduct/SingleProductDetails';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState();
@@ -13,13 +14,9 @@ const ProductDetails = () => {
     setProduct(getItemById(id));
   }, []);
   return (
-    <Layout>
-      <div className="container">
-        <Breadcrumb paths="categories/product-name" />
-        <SingleProductDetails product={product}/>
-        {/* <RelatedProducts /> */}
-      </div>
-    </Layout>
+    <div className="mobile-container-full">
+      <SingleProductDetails product={product} />
+    </div>
   );
 };
 

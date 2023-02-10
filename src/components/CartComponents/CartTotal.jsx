@@ -12,46 +12,17 @@ export const CartTotal = ({ cart }) => {
     return (result += cur?.price * cur?.quantity);
   }, 0);
   return (
-    <div className="border-[#BFBFBF] border bg-white p-4 lg:p-8 rounded-lg my-6">
-      <SectionTitle title="Cart Totals" />
-      <div className="flex justify-between flex-wrap gap-8">
-        <div className="flex gap-3">
-          <MapIcon color="var(--primary-color)" />
-          <div className="flex flex-col gap-4 max-w-md">
-            <h3 className="text-lg font-medium">
-              {fetchWord('shipping_to', lang)}
-            </h3>
-            <p className="text-secondary">
-              {fetchWord('shipping_to_msg', lang)}
-            </p>
-            <button className="w-40 inline-block text-center border border-primary rounded-md p-3 text-primary">
-              {fetchWord('change', lang)}
-            </button>
-          </div>
-        </div>
-        <div className="min-w-[200px] lg:min-w-[300px]">
-          <ul className="flex flex-col gap-2 text-center">
-            <li className="text-md font-medium">
-              {fetchWord('subtotal', lang)}:{' '}
-              <span className="mx-5">{cartTotal}$</span>
-            </li>
-            <li className="text-md font-medium">
-              {fetchWord('shipping', lang)}: <span className="mx-5">45$</span>
-            </li>
-            <div className="border border-black opacity-75" />
-            <li className="text-md font-medium">
-              {fetchWord('amount', lang)}:{' '}
-              <span className="mx-5">{cartTotal + 45}$</span>{' '}
-            </li>
-          </ul>
-          <Link href="checkout" className="w-full max-w-xs">
-            <PrimaryButton
-              text={fetchWord('checkout', lang)}
-              classes="!py-2 mt-4 w-full max-w-xs rounded-md"
-            />
-          </Link>
-        </div>
+    <div className="my-6">
+      <div className="flex justify-between mb-8">
+        <p className="text-[#888888]">Total ({cart?.length}Item)</p>
+        <h3 className='text-black text-lg font-medium'>${cartTotal}</h3>
       </div>
+      <Link href="checkout" className="w-full max-w-xs ">
+        <PrimaryButton
+          text="Process to checkout"
+          classes="!py-2 mt-4 w-full rounded-md h-12"
+        />
+      </Link>
     </div>
   );
 };

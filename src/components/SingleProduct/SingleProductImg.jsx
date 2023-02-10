@@ -40,7 +40,7 @@ export const SingleProductImg = ({ img, alt }) => {
       <figure>
         <Image src={img} alt={alt} height={450} width={450} className='w-full object-cover' />
       </figure>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Slider {...setting}>
           <figure className="p-1">
             <Image src={img} alt={alt} height={250} width={250} />
@@ -55,7 +55,7 @@ export const SingleProductImg = ({ img, alt }) => {
             <Image src={img} alt={alt} height={250} width={250} />
           </figure>
         </Slider>
-      </div>
+      </div> */}
     </div>
   );
 };

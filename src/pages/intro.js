@@ -41,7 +41,7 @@ const Intro = () => {
   }, [stage]);
   return (
     <div className="mobile-container">
-      <div className="intro">
+      <div className="intro flex flex-col justify-center items-center h-full">
         <figure>
           <Image
             src={stageContent?.img}
@@ -50,7 +50,7 @@ const Intro = () => {
             height={200}
           />
         </figure>
-        <div className="flex items-center gap-2 mb-10">
+        <div className="flex items-center gap-2 mt-6 mb-10">
           <span
             className={`h-3 w-3 rounded-full bg-[#DDDDDD] ${
               stage >= 0 ? '!bg-primary' : ''
@@ -80,7 +80,7 @@ const Intro = () => {
         </p>
         <button
           onClick={nextStage}
-          className="h-12 text-center bg-primary block w-full rounded-md text-white"
+          className="h-12 text-center mt-6 bg-primary block w-full rounded-md text-white"
         >
           Next
         </button>

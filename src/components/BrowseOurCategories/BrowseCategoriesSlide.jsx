@@ -1,46 +1,35 @@
 import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { CustomSlideArrow } from './CustomSlideArrow';
+
 import { CategoryCard } from './CategoryCard';
 
-export const BrowseCategoriesSlide = ({ categories }) => {
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+
+export const BrowseCategoriesSlide = ({
+  categories,
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   const setting = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    arrows: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    className:"relative max-w-[90%] browse-slide-categories",
-    nextArrow: <CustomSlideArrow direction="next" />,
-    prevArrow: <CustomSlideArrow />,
-    responsive: [
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          centerPadding: '72px',
-        },
-      },
-      {
-        breakpoint: 700,
-        settings: {
-          slidesToShow: 3,
-          initialSlide: 3,
-          slidesToScroll: 3,
-          arrows: false,
-        },
-      },
-    ],
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    className: 'relative overflow-auto',
   };
   return (
     <div>
       <Slider {...setting}>
         {categories.map((category) => (
-          <CategoryCard category={category} key={category?.id} />
+          <CategoryCard
+            category={category}
+            key={category?.id}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         ))}
       </Slider>
     </div>

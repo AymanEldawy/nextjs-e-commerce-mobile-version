@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const CategoryFilterSizes = () => {
+export const CategoryFilterSizes = ({ title }) => {
+  const [selectedSize, setSelectedSize] = useState();
+  const sizes = ['s', 'm', 'l', 'xl', 'xxl'];
   return (
-    <div className=" p-4 lg:px-8">
-      <h3 className="text-primary mb-6 font-semibold text-xl">Sizes</h3>
+    <div className="my-4 pb-4">
+      <h3 className="text-tprimary mb-4 font-semibold text-base">{title}</h3>
       <div className="flex gap-2">
-        <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
-          S
-        </span>
-        <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
-          M
-        </span>
-        <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
-          L
-        </span>
-        <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
-          XL
-        </span>
-        <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
-          XXL
-        </span>
+        {sizes?.map((size) => (
+          <button
+            key={size}
+            className={`flex items-center justify-center p-2 text-sm font-normal  rounded-sm h-8 w-8 border border-[#DDDDDD] text-[#888888] ${
+              selectedSize === size
+                ? 'bg-primary border-primary !text-white'
+                : ''
+            } `}
+            onClick={() => setSelectedSize(size)}
+          >
+            {size}
+          </button>
+        ))}
       </div>
     </div>
   );
