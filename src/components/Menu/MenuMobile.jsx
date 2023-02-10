@@ -8,16 +8,16 @@ import { SearchIcon } from './../Icons/SearchIcon';
 import { ChevronIcon } from './../Icons/ChevronIcon';
 import { useRouter } from 'next/router';
 
-export const MenuMobile = ({ openMenu, title, back, backSteps }) => {
+export const MenuMobile = ({ openMenu, title, back, backSteps, full }) => {
   const router = useRouter();
   return (
-    <div className="flex justify-between items-center">
+    <div className={`flex justify-between items-center ${full ? 'p-4 absolute top-0 left-0 w-full' : ''}`}>
       <button className="" onClick={openMenu}>
-        <BarsIcon />
+        <BarsIcon color={full ? '#fff': ''}/>
       </button>
       <div className="w-28">
         {title ? (
-          <h1 className=" whitespace-nowrap text-center text-secondary font-semibold font-base">
+          <h1 className={`whitespace-nowrap text-center text-secondary font-semibold font-base ${full ? '!text-white': ''}`}>
             {title}
           </h1>
         ) : (
@@ -38,12 +38,12 @@ export const MenuMobile = ({ openMenu, title, back, backSteps }) => {
         <ul className="flex items-center gap-2">
           <li className=" scale-75 ">
             <button>
-              <SearchIcon />
+              <SearchIcon color={full ? '#fff': ''} />
             </button>
           </li>
           <li className=" scale-75 ">
             <Link href="/wishlist">
-              <HeartIcon />
+              <HeartIcon colorWhite color={full ? '#fff': ''}/>
             </Link>
           </li>
         </ul>

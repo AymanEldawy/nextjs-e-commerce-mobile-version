@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { InputField } from '../Forms/InputField';
 import { PrimaryButton } from '../Global/PrimaryButton/PrimaryButton';
 
-export const AddNewVisaCard = ({ onClick }) => {
+export const AddNewVisaCard = ({ onClick, title, label }) => {
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState();
   const [expirationDate, setExpirationDate] = useState();
@@ -15,7 +15,7 @@ export const AddNewVisaCard = ({ onClick }) => {
   return (
     <div>
       <h3 className="text-primary font-medium text-base mb-4">
-        Card information
+        {title ? title : 'Card information'}
       </h3>
       <form onSubmit={handleSubmit}>
         <InputField
@@ -65,8 +65,8 @@ export const AddNewVisaCard = ({ onClick }) => {
           Save card information
         </label>
         <PrimaryButton
-          text="Confirm Payment"
-          classes="w-full !p-4 mt-4 rounded-lg"
+          text={label ? label : 'Confirm Payment'}
+          classes={`w-full !p-4 mt-4 rounded-lg ${label ? 'mt-32' : ''}`}
         />
       </form>
     </div>

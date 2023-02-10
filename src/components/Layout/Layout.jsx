@@ -11,17 +11,19 @@ export const Layout = ({
   title,
   back,
   backSteps,
+  full
 }) => {
   const { lang } = useContext(LanguageContext);
   const [menuOpened, setMenuOpened] = useState(false);
-
+  const classes = full ? 'mobile-container-full' : 'mobile-container';
   return (
-    <div className="mobile-container">
+    <div className={classes}>
       <MenuMobile
         title={title}
         openMenu={() => setMenuOpened(true)}
         back={back}
         backSteps={backSteps}
+        full={full}
       />
       <MenuSidebar
         closeMenu={() => setMenuOpened(false)}
