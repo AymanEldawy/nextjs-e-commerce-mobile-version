@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
 
-import { ChevronIcon } from '../Components/Icons/ChevronIcon';
 import { LanguageContext } from './../context/LangContext';
 import { Layout } from './../components/Layout/Layout';
 import { EditProfileIcon } from './../components/Icons/EditProfileIcon';
@@ -12,8 +11,9 @@ import { NotificationIcon } from './../components/Icons/NotificationIcon';
 import { VisaCardIcon } from './../components/Icons/VisaCardIcon';
 import { LanguageIcon } from './../components/Icons/LanguageIcon';
 import { PrivacyIcon } from './../components/Icons/PrivacyIcon';
-import { LogoutIcon } from '../components/Icons/LoguoutIcon';
+import { LogoutIcon } from '../components/Icons/LogoutIcon';
 import Image from 'next/image';
+import { ChevronIcon } from './../components/Icons/ChevronIcon';
 const Profile = ({ closeMenu, menuOpened }) => {
   const [fakeLogin, setFakeLogin] = useState(true);
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
