@@ -1,8 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { SectionTitle } from './../Global/SectionTitle';
-import { InputField } from './../Forms/InputField';
-import { SelectField } from './../Forms/SelectField';
-import { TextField } from './../Forms/TextField';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../../context/LangContext';
@@ -14,10 +10,6 @@ export const BillingDetails = ({ nextStageHandler }) => {
   const [fullName, setFullName] = useState('');
   const [address, setAddress] = useState('');
   const [country, setCountry] = useState('');
-  const [town, setTown] = useState('');
-  const [street, setStreet] = useState('');
-  const [phone, setPhone] = useState('');
-  const [orderNote, setOrderNote] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -29,7 +21,9 @@ export const BillingDetails = ({ nextStageHandler }) => {
   ];
   return (
     <div className="mt-8">
-      <h3 className='text-primary font-medium text-base mb-4'>Shipping</h3>
+      <h3 className="text-primary font-medium text-base mb-4">
+        {fetchWord('Shipping', lang)}
+      </h3>
       <form className="flex flex-col mb-8" onSubmit={handleSubmit}>
         <InputFieldMobile
           value={fullName}
@@ -41,25 +35,25 @@ export const BillingDetails = ({ nextStageHandler }) => {
           value={address}
           handleChange={(e) => setAddress(e.target.value)}
           type="text"
-          label="address"
+          label={fetchWord('address', lang)}
         />
         <InputFieldMobile
           value={address}
           handleChange={(e) => setAddress(e.target.value)}
           type="text"
-          label="city"
+          label={fetchWord('city', lang)}
         />
         <InputFieldMobile
           value={address}
           handleChange={(e) => setAddress(e.target.value)}
           type="text"
-          label="State/Province/Region"
+          label={fetchWord('State/Province/Region', lang)}
         />
         <InputFieldMobile
           value={address}
           handleChange={(e) => setAddress(e.target.value)}
           type="text"
-          label="Zip Code (Postal Code)"
+          label={fetchWord('Zip Code (Postal Code)', lang)}
         />
         <SelectFieldMobile
           value={country}

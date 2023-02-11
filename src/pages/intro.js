@@ -1,34 +1,45 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
+import { fetchWord } from './../lang/fetchWord';
+import { LanguageContext } from './../context/LangContext';
 
-const introData = [
-  {
-    title: 'Shopping and place your order ',
-    img: 'images/intro/intro-1.svg',
-    description:
-      'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
-  },
-  {
-    title: '24/24 customer service',
-    img: 'images/intro/intro-2.svg',
-    description:
-      'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
-  },
-  {
-    title: 'Several payment methods',
-    img: 'images/intro/intro-3.svg',
-    description:
-      'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
-  },
-  {
-    title: 'Fast delivery ',
-    img: 'images/intro/intro-4.svg',
-    description:
-      'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
-  },
-];
 const Intro = () => {
+  const {lang} = useContext(LanguageContext)
+  const introData = [
+    {
+      title: fetchWord('Shopping and place your order', lang),
+      img: 'images/intro/intro-1.svg',
+      description: fetchWord(
+        'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
+        lang
+      ),
+    },
+    {
+      title: fetchWord('24/24 customer service', lang),
+      img: 'images/intro/intro-2.svg',
+      description: fetchWord(
+        'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
+        lang
+      ),
+    },
+    {
+      title: fetchWord('Several payment methods', lang),
+      img: 'images/intro/intro-3.svg',
+      description: fetchWord(
+        'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
+        lang
+      ),
+    },
+    {
+      title: fetchWord('Fast delivery', lang),
+      img: 'images/intro/intro-4.svg',
+      description: fetchWord(
+        'Get a little lift from these Sam Edelman sandals featuring ruched on l straps and leather lace-up ties, while a braided jute sole makes a fresh.',
+        lang
+      ),
+    },
+  ];
   const router = useRouter();
   const [stage, setStage] = useState(0);
   const [stageContent, setStageContent] = useState(introData[stage]);
@@ -82,7 +93,7 @@ const Intro = () => {
           onClick={nextStage}
           className="h-12 text-center mt-6 bg-primary block w-full rounded-md text-white"
         >
-          Next
+          {fetchWord('Next', lang)}
         </button>
       </div>
     </div>

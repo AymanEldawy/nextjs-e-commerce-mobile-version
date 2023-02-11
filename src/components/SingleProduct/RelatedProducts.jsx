@@ -5,7 +5,6 @@ import Slider from 'react-slick';
 
 import { LanguageContext } from './../../context/LangContext';
 import { Card } from './../Card/Card';
-import { SectionTitle } from './../Global/SectionTitle';
 import { ChevronIcon } from './../Icons/ChevronIcon';
 
 import 'slick-carousel/slick/slick-theme.css';
@@ -65,7 +64,6 @@ export const RelatedProducts = () => {
   return (
     <div>
       <div className="relative py-8">
-        <SectionTitle title={fetchWord('Related_Products', lang)} />
         <Slider {...setting}>
           {products?.map((product) => (
             <figure key={product?.id} className="p-2">

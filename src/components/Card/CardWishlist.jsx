@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { HeartIcon } from './../Icons/HeartIcon';
 
-export const CardWishlist = () => {
-  const [inWishlist, setInWishlist] = useState(false);
+export const CardWishlist = ({ inWishlist }) => {
+  const [wishlist, setWishlist] = useState(inWishlist || null);
   return (
     <button
       className="absolute right-3 top-3 rtl:left-4 rtl:right-auto scale-75"
-      onClick={() => setInWishlist(!inWishlist)}
+      onClick={() => setWishlist((prev) => !prev)}
     >
-      <HeartIcon color={inWishlist ? '#f00' : ''} />
+      <HeartIcon color={wishlist ? '#f00' : ''} />
     </button>
   );
 };

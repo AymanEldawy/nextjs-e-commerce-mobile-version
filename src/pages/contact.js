@@ -1,28 +1,29 @@
-import React from 'react';
-import { SectionTitle } from './../components/Global/SectionTitle';
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
+import React, { useContext} from 'react';
 import { Layout } from './../components/Layout/Layout';
 import { MapIcon } from './../components/Icons/MapIcon';
 import { SmartPhoneIcon } from './../components/Icons/SmartPhoneIcon';
 import { MessageIcon } from './../components/Icons/MessageIcon';
 import { ContactInfoCard } from './../components/ContactInfoCard/ContactInfoCard';
 import { ContactForm } from './../components/ContactForm/ContactForm';
+import { LanguageContext } from './../context/LangContext';
+import { fetchWord } from './../lang/fetchWord';
 
 const Contact = () => {
+  const { lang } = useContext(LanguageContext);
   const contactInfo = [
     {
       icon: <MapIcon color={'#f1a002'} />,
-      title: 'Address',
+      title: fetchWord('Address', lang),
       text: 'Lorem Ipsum is simply dummy text of the printing',
     },
     {
       icon: <SmartPhoneIcon color={'#f1a002'} />,
-      title: 'Phone Number',
+      title: fetchWord('Phone Number', lang),
       text: 'Lorem Ipsum is simply dummy text of the printing',
     },
     {
       icon: <MessageIcon color={'#f1a002'} />,
-      title: 'E-mail Address',
+      title: fetchWord('E-mail Address', lang),
       text: 'Lorem Ipsum is simply dummy text of the printing',
     },
   ];
@@ -30,8 +31,7 @@ const Contact = () => {
     <Layout>
       <div className="mt-12">
         <div className="container">
-          <Breadcrumb paths="contact" />
-          <SectionTitle title="Contact Info" />
+          <h3 className="text-base font-medium text-primary mb-8"></h3>
           <p className="text-secondary">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text

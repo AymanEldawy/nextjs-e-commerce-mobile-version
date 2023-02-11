@@ -21,7 +21,7 @@
 
 body {
   background-color: #e4e4e4;
-  display: flex;
+  /* display: flex; */
   height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
@@ -121,11 +121,12 @@ div:has(select:required) label::before {
 .mobile-container {
   position: relative;
   background-color: #fff;
-  width: 375px;
+  width: 100%;
+  max-width: 575px;
   padding: 1rem;
   /* max-width: 375px; */
   /* overflow-x: hidden; */
-  margin: 0 auto;
+  /* margin: auto; */
   height: 100%;
   overflow-y: auto;
 }
@@ -142,4 +143,30 @@ div:has(select:required) label::before {
 
 .icon-shadow {
   box-shadow: 0px 22px 40px rgba(0, 0, 0, 0.1);
+}
+.price-slide .noUi-target {
+  height: 5px;
+  background-color: #D9D9D9;
+  box-shadow: none;
+}
+.price-slide .noUi-horizontal .noUi-handle {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  top: -7px;
+  background-color: var(--primary-color) !important;
+  border: none;
+  box-shadow: none;
+}
+.price-slide .noUi-horizontal .noUi-handle:after,
+.price-slide .noUi-horizontal .noUi-handle:before {
+  display: none;
+}
+
+.price-slide .noUi-base,
+.noUi-connects {
+  height: 4px;
+}
+.price-slide .noUi-connect {
+  background-color: var(--primary-color) !important;
 }

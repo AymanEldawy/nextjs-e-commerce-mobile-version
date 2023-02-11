@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import { Layout } from './../components/Layout/Layout';
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../context/LangContext';
 
 const Terms = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <Layout title="Privacy policy" back>
+    <Layout title={fetchWord("Privacy policy", lang)} back>
       <div className="pt-[1px] bg-white mb-8 mt-12">
         <h2 className="text-primary font-medium text-xl mb-4">
           1. {fetchWord('Terms', lang)}

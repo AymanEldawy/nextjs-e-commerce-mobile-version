@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Layout } from './../components/Layout/Layout';
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
 import { SearchIcon } from './../components/Icons/SearchIcon';
 import { MessageIcon } from './../components/Icons/MessageIcon';
 import { PaymentIcon } from './../components/Icons/PaymentIcon';
@@ -51,7 +50,6 @@ const FAQ = () => {
     <Layout>
       <div className="pt-[1px] bg-bgprimary">
         <div className="container">
-          <Breadcrumb paths="FAQ" />
           <div className="flex flex-col justify-center items-center">
             <span>FAQs</span>
             <h1 className="text-4xl text-primary mb-4">

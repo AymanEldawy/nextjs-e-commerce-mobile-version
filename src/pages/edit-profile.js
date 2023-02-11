@@ -18,27 +18,27 @@ const EditProfile = () => {
     { id: 3, name: 'USA' },
   ];
   const ganders = [
-    { id: 1, name: 'male' },
-    { id: 2, name: 'female' },
+    { id: 1, name: fetchWord('male', lang) },
+    { id: 2, name: fetchWord('female', lang) },
   ];
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     alert('profile updated successfully!');
   };
   return (
-    <Layout back title="Edit Profile" hideBottomMenu>
+    <Layout back title={fetchWord('edit_profile', lang)} hideBottomMenu>
       <form className="mt-12" onSubmit={handleSubmit}>
         <InputFieldMobile
           value={fullName}
           handleChange={(e) => setFullName(e.target.value)}
           type="text"
-          label="username"
+          label={fetchWord('username', lang)}
         />
         <InputFieldMobile
           value={email}
           handleChange={(e) => setEmail(e.target.value)}
           type="email"
-          label="email"
+          label={fetchWord('email', lang)}
         />
         <SelectFieldMobile
           value={country}
@@ -49,11 +49,11 @@ const EditProfile = () => {
         <SelectFieldMobile
           value={gender}
           handleChange={(e) => setGender(e.target.value)}
-          label="Gender"
+          label={fetchWord('gender', lang)}
           list={ganders}
         />
         <PrimaryButton
-          text="Update"
+          text={fetchWord('update', lang)}
           classes="mt-20 w-full !p-4 rounded-md"
         />
       </form>

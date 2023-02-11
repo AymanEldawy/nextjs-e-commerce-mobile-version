@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { SectionTitle } from './../Global/SectionTitle';
 import { InputField } from '../Forms/InputField';
 import { TextField } from './../Forms/TextField';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
@@ -13,7 +12,9 @@ export const ContactForm = () => {
   const [message, setMessage] = useState('');
   return (
     <div className="mt-8">
-      <SectionTitle title="Send Us a Message" />
+      <h3 className="text-base font-medium text-primary mb-8">
+        {fetchWord('Send Us a Message', lang)}
+      </h3>
       <form className="mb-8">
         <InputField
           label={fetchWord('your_name', lang)}

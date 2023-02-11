@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../context/LangContext';
@@ -25,9 +23,9 @@ const UpdatePassword = () => {
       <div className="mobile-container">
         <div className="flex gap-4 flex-col">
           <div className="">
-            <h1 className="text-2xl mb-4 font-semibold">Update Password</h1>
+            <h1 className="text-2xl mb-4 font-semibold">{fetchWord('Update Password', lang)}</h1>
             <p className="text-sm mb-4 text-[#00000099]">
-              Please enter your new password and confirm it.
+              {fetchWord('Please enter your new password and confirm it', lang)}
             </p>
           </div>
           <form onSubmit={handleSubmit} className="mt-6">

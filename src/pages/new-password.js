@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import Head from 'next/head';
 import Image from 'next/image';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
@@ -31,7 +30,7 @@ const NewPassword = () => {
           />
         </figure>
         <div className="flex flex-col p-8 flex-1">
-          <SectionTitle title={fetchWord('New_password', lang)} />
+          <h3>{fetchWord('New_password', lang)}</h3>
           <div className="h-14" />
 
           <form handleSubmit={handleSubmit}>

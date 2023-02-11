@@ -6,7 +6,6 @@ import { CardRate } from './../Card/CardRate';
 import { InputField } from './../Forms/InputField';
 import { TextField } from './../Forms/TextField';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
-import { SectionTitle } from './../Global/SectionTitle';
 
 export const ReviewForm = () => {
   const { lang } = useContext(LanguageContext);
@@ -20,7 +19,6 @@ export const ReviewForm = () => {
   return (
     <div className="bg-[#F8F8F8D6] p-4">
       <div className="container">
-        <SectionTitle title="Add a Review" />
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="max-w-fit mx-auto ">
             <CardRate width={40} />

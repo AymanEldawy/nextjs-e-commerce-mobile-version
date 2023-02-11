@@ -1,21 +1,17 @@
 import React, { useContext } from 'react';
 import { Layout } from './../components/Layout/Layout';
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
-import { SectionTitle } from './../components/Global/SectionTitle';
-import { TableProducts } from './../components/TableProducts/TableProducts';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../context/LangContext';
+import { FeaturedProductGrid } from './../components/BrowseOurCategories/FeaturedProductGrid';
+import { products } from '@/data/cardData';
 
 const Wishlist = () => {
   const { lang } = useContext(LanguageContext);
+  const inWishlist = products?.filter((product) => product?.inWishlist);
   return (
-    <Layout>
+    <Layout title="My favorite" back hideBottomMenu>
       <div className="mt-12">
-        <div className="container">
-          <Breadcrumb paths="wishlist" />
-          <SectionTitle title={fetchWord('My Wishlist', lang)} />
-          <TableProducts />
-        </div>
+        <FeaturedProductGrid products={inWishlist} pageSize={12} />
       </div>
     </Layout>
   );

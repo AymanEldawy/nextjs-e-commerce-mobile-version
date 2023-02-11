@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { Layout } from './../components/Layout/Layout';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { InputField } from './../components/Forms/InputField';
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
 import { LanguageContext } from './../context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
@@ -12,9 +10,10 @@ const TrackOrder = () => {
   return (
     <Layout>
       <div className="container !mb-12">
-        <Breadcrumb paths="Track Order" />
         <div className="h-7" />
-        <SectionTitle title={fetchWord('Track_Order', lang)} center />
+        <h2 className="text-primary font-medium text-xl mb-4">
+          {fetchWord('Track_Order', lang)}
+        </h2>
         <div className="flex gap-4">
           <InputField type="email" label={fetchWord('your_email', lang)} />
           <InputField type="text" label={fetchWord('Order_Code', lang)} />

@@ -3,7 +3,6 @@ import { fetchWord } from '@/lang/fetchWord';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 
-import { Breadcrumb } from '../components/Breadcrumb/Breadcrumb';
 import { CategorySidebar } from '../components/Categories/CategorySidebar';
 import { Layout } from '../components/Layout/Layout';
 import { CategoriesGrid } from './../components/Categories/CategoriesGrid';
@@ -18,7 +17,7 @@ const Categories = (props) => {
     // setTitle('Categories');
   }, []);
   return (
-    <Layout hideBottomMenu title="Categories" back> 
+    <Layout hideBottomMenu title={fetchWord("categories", lang)} back> 
       <CategorySidebar />
       {/* <CategoriesGrid items={products} itemsPerPage={12} /> */}
     </Layout>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Breadcrumb } from '../components/Breadcrumb/Breadcrumb';
 import { Layout } from '../components/Layout/Layout';
 import { BillingDetails } from '../components/CheckoutComponents/BillingDetails';
 import { Payment } from './../components/CheckoutComponents/Payment';

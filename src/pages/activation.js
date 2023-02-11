@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
 import { fetchWord } from '@/lang/fetchWord';
 import { LanguageContext } from './../context/LangContext';
@@ -19,9 +18,11 @@ const Activation = () => {
       <div className="mobile-container">
         <div className="flex gap-4 flex-col">
           <div className="">
-            <h1 className="text-2xl mb-4 font-semibold">Verify Your Mail</h1>
+            <h1 className="text-2xl mb-4 font-semibold">
+              {fetchWord('Verify Your Mail', lang)}
+            </h1>
             <p className="text-sm mb-4 text-[#00000099]">
-              Please Enter 4-Digit Sent to your Mail
+              {fetchWord('Please Enter 4-Digit Sent to your Mail', lang)}
             </p>
           </div>
           <div className="flex gap-4 justify-between items-center mt-6">
@@ -43,7 +44,7 @@ const Activation = () => {
             />
           </div>
           <button className="text-primary underline block text-center mb-8 mt-4">
-            Resend Code
+            {fetchWord('Resend Code', lang)}
           </button>
           <PrimaryButton
             text={fetchWord('verify', lang)}

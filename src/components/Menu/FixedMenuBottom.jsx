@@ -12,7 +12,7 @@ export const FixedMenuBottom = () => {
   console.log(router);
   return (
     <div
-      className="fixed bottom-0 left-0 w-[375px] bg-white p-4 rounded-t-lg rounded-b-hidden"
+      className="fixed bottom-0 left-0 rtl:left-auto rtl:right-0 w-full max-w-[575px] bg-white p-3 rounded-t-lg rounded-b-hidden"
       style={{
         boxShadow: '0px -10px 40px 0px #89217026',
       }}
@@ -21,7 +21,7 @@ export const FixedMenuBottom = () => {
         <li>
           <Link
             href="/"
-            className="flex flex-col gap-4 justify-center items-center"
+            className="flex flex-col gap-1 justify-center items-center"
           >
             <HomeMobileIcon
               color={router?.pathname === '/' ? '#5E452A' : ' #292D3280'}

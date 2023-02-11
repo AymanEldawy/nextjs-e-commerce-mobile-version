@@ -1,8 +1,7 @@
-import React, { useContext , useState} from 'react';
+import React, { useContext, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
-import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
 import { LanguageContext } from './../context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
 import { InputField } from './../components/Forms/InputField';
@@ -24,8 +23,12 @@ const ForgotPassword = () => {
       <div className="mobile-container">
         <div className="flex gap-4 flex-col">
           <div className="">
-            <h1 className="text-2xl mb-4 font-semibold">Forget Password</h1>
-            <p className="text-sm mb-4 text-[#00000099]">Please enter Your Mail</p>
+            <h1 className="text-2xl mb-4 font-semibold">
+              {fetchWord('Forget Password', lang)}
+            </h1>
+            <p className="text-sm mb-4 text-[#00000099]">
+              {fetchWord('Please enter Your Mail', lang)}
+            </p>
           </div>
           <form onSubmit={handleSubmit}>
             <InputField

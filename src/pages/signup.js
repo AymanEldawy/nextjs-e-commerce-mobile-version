@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
-import { SignupForm } from './../components/Forms/SignupForm';
 import { LanguageContext } from './../context/LangContext';
 import { useContext, useState } from 'react';
 import { fetchWord } from '@/lang/fetchWord';
@@ -28,9 +26,11 @@ export default function Signup() {
       <div className="mobile-container">
         <div className="flex gap-4 flex-col">
           <div className="">
-            <h1 className="text-2xl mb-4 font-semibold">Create an account</h1>
+            <h1 className="text-2xl mb-4 font-semibold">
+              {fetchWord('Create an account', lang)}
+            </h1>
             <p className="text-sm mb-4 text-[#00000099]">
-              Let’s create your account
+              {fetchWord('Let’s create your account', lang)}
             </p>
           </div>
           <form onSubmit={handleSubmit}>
@@ -90,12 +90,12 @@ export default function Signup() {
             <LoginWithSocialAccount />
           </div>
           <p className="text-center text-[#4A4844] text-sm mb-4">
-            Already a member?
+            {fetchWord('Already a member?', lang)}
             <Link
               href="signup"
               className="mx-1 underline text-black font-medium"
             >
-              Log In
+              {fetchWord('Log In', lang)}
             </Link>
           </p>
         </div>

@@ -6,9 +6,6 @@ import { useContext } from 'react';
 import { Banner } from './../components/Banner/Banner';
 import { BrowseOurCategories } from './../components/BrowseOurCategories/BrowseOurCategories';
 import { Layout } from './../components/Layout/Layout';
-import { OfferSection } from './../components/OfferSection/OfferSection';
-import { OurFeatures } from './../components/OurFeatures/OurFeatures';
-import { Testimonial } from './../components/Testimonial/Testimonial';
 import { WinterCollectionBanner } from './../components/WinterCollectionBanner/WinterCollectionBanner';
 import { LanguageContext } from './../context/LangContext';
 import { FeaturedProductGrid } from './../components/BrowseOurCategories/FeaturedProductGrid';
@@ -26,24 +23,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Banner />
-        <BrowseOurCategories title={fetchWord('FEATURED_PRODUCTS', lang)} />
-        <WinterCollectionBanner />
-        <div className="my-4" />
-        <FeaturedProductGrid products={products} />
-        {/* <OfferSection /> */}
-        {/* <FeaturedProductSection
-          title={fetchWord('Browse_Our_Categories', lang)}
-          products={products}
-        /> */}
-        {/* 
-        <FeaturedProductSection
-          title={fetchWord('New_Arrivals', lang)}
-          products={products}
-        />
-        <OurFeatures title={fetchWord('Our_Features', lang)} center />
-        <Brands title={fetchWord('Brands', lang)} />
-        <Testimonial title={fetchWord('Testimonial', lang)} /> */}
+        <div className="mb-24">
+          <Banner />
+          <BrowseOurCategories title={fetchWord('FEATURED_PRODUCTS', lang)} />
+          <WinterCollectionBanner />
+          <div className="my-4" />
+          <FeaturedProductGrid products={products} />
+        </div>
       </Layout>
     </>
   );

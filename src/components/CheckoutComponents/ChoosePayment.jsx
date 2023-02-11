@@ -10,7 +10,7 @@ export const ChoosePayment = ({ nextStageHandler }) => {
   return (
     <div className="mt-12 flex flex-col">
       <h3 className="text-primary font-medium text-base mb-4">
-        Choose your payment method
+        {fetchWord('Choose your payment method', lang)}
       </h3>
       <div className="mt-6">
         <div className="flex justify-between items-center  mb-5">
@@ -25,7 +25,7 @@ export const ChoosePayment = ({ nextStageHandler }) => {
               className="w-5 h-5 text-primary bg-gray-100 border-gray-300 focus:ring-primary focus:ring-2 accent-primary"
               onChange={() => setMethod('Pay with card online')}
             />
-            Pay with card online
+            {fetchWord('Pay with card online', lang)}
           </label>
           <button>
             <PlusCircleIcon />
@@ -56,7 +56,7 @@ export const ChoosePayment = ({ nextStageHandler }) => {
             className="w-5 h-5 text-primary bg-gray-100 border-gray-300 focus:ring-primary focus:ring-2 accent-primary"
             onChange={() => setMethod('Pay by card at the door')}
           />
-          Pay by card at the door
+          {fetchWord('Pay by card at the door', lang)}
         </label>
       </div>
       <PrimaryButton

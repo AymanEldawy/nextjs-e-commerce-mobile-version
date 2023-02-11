@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { InputField } from '../Forms/InputField';
 import { PrimaryButton } from '../Global/PrimaryButton/PrimaryButton';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from './../../lang/fetchWord';
 
 export const AddNewVisaCard = ({ onClick, title, label }) => {
+  const { lang } = useContext(LanguageContext);
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState();
   const [expirationDate, setExpirationDate] = useState();
@@ -15,21 +18,21 @@ export const AddNewVisaCard = ({ onClick, title, label }) => {
   return (
     <div>
       <h3 className="text-primary font-medium text-base mb-4">
-        {title ? title : 'Card information'}
+        {title ? title : fetchWord('Card information', lang)}
       </h3>
       <form onSubmit={handleSubmit}>
         <InputField
           style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-          label="Name on card"
+          label={fetchWord('Name on card', lang)}
           type="text"
           name="cart"
-          placeholder="Name"
+          placeholder={fetchWord('name', lang)}
           value={cardName}
           handleChange={(e) => setCardName(e.target.value)}
         />
         <InputField
           style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-          label="Card number"
+          label={fetchWord('Card number', lang)}
           type="text"
           name="cardNumber"
           placeholder="0000 0000 0000 0000"
@@ -39,7 +42,7 @@ export const AddNewVisaCard = ({ onClick, title, label }) => {
         <div className="flex gap-4">
           <InputField
             style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-            label="Expiration Date"
+            label={fetchWord('Expiration Date', lang)}
             type="tel"
             name="expirationDate"
             placeholder="MM/YY"
@@ -62,10 +65,10 @@ export const AddNewVisaCard = ({ onClick, title, label }) => {
             value="save"
             className="accent-primary h-4 w-4"
           />
-          Save card information
+          {fetchWord('Save card information', lang)}
         </label>
         <PrimaryButton
-          text={label ? label : 'Confirm Payment'}
+          text={label ? label : fetchWord('Confirm Payment', lang)}
           classes={`w-full !p-4 mt-4 rounded-lg ${label ? 'mt-32' : ''}`}
         />
       </form>

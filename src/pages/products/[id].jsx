@@ -2,7 +2,6 @@ import { getItemById } from '@/data/cardData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-import { Breadcrumb } from './../../components/Breadcrumb/Breadcrumb';
 import { Layout } from './../../components/Layout/Layout';
 import { SingleProductDetails } from './../../components/SingleProduct/SingleProductDetails';
 

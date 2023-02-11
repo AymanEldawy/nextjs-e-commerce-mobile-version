@@ -1,14 +1,16 @@
 import { cart as carts } from '@/data/cardData';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
-import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
 import { CartTotal } from './../components/CartComponents/CartTotal';
 import { TableCart } from './../components/CartComponents/TableCart';
 import { Layout } from './../components/Layout/Layout';
 import { FormPromoCode } from './../components/CartComponents/FormPromoCode';
+import { fetchWord } from './../lang/fetchWord';
+import { LanguageContext } from './../context/LangContext';
 
-export default function Home() {
+export default function Cart() {
+  const { lang } = useContext(LanguageContext);
   const [cart, setCart] = useState([]);
   useEffect(() => {
     setCart(carts);
@@ -22,7 +24,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout title="Cart">
+      <Layout title={fetchWord('cart', lang)}>
         <div className="mb-32">
           <TableCart cart={cart} />
           <FormPromoCode />

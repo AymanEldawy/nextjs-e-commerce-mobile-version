@@ -14,15 +14,15 @@ const Addresses = () => {
     console.log(stage);
     switch (stage) {
       case 'add':
-        return <AddressForm title="Add Address" />;
+        return <AddressForm title={fetchWord('add_address', lang)} />;
       case 'edit':
-        return <AddressForm title="Update " />;
+        return <AddressForm title={fetchWord('update', lang)} />;
     }
   };
   const handleBack = () => setStage('');
   return (
     <Layout
-      title="My Addresses"
+      title={fetchWord('my_address', lang)}
       back
       hideBottomMenu
       backSteps={stage !== '' ? handleBack : undefined}
@@ -41,7 +41,7 @@ const Addresses = () => {
             ))}
             <PrimaryButton
               onClick={() => setStage('add')}
-              text="Add new address"
+              text={fetchWord('add_new_address', lang)}
               classes="mt-20 w-full !p-4 rounded-md"
             />
           </div>

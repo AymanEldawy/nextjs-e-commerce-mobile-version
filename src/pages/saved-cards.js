@@ -12,7 +12,7 @@ const SavedCards = () => {
   const backStage = () => setStage(1);
   return (
     <Layout
-      title="Saved Cards"
+      title={fetchWord('Saved Cards', lang)}
       hideBottomMenu
       back
       backSteps={stage > 1 ? backStage : undefined}
@@ -27,12 +27,15 @@ const SavedCards = () => {
             </div>
             <PrimaryButton
               onClick={() => setStage(2)}
-              text="Add new card"
+              text={fetchWord('Add new card', lang)}
               classes="w-full !p-3 mt-60"
             />
           </div>
         ) : (
-          <AddNewVisaCard title="Add new card" label="Add Card" />
+          <AddNewVisaCard
+            title={fetchWord('Add new card', lang)}
+            label={fetchWord('Add card', lang)}
+          />
         )}
       </div>
     </Layout>

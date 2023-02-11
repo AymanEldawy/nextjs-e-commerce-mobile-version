@@ -21,10 +21,9 @@ export const CategorySidebar = () => {
       <CategoryFilterSizes title={fetchWord('Sizes', lang)} />
       <div className="border my-2 border-#EFEFEF]" />
       <div className='flex gap-2 mt-6'>
-        <PrimaryButton text="Discard" classes='!p-3 flex-1 !text-primary bg-[#F9F9F9] rounded-md' />
-        <PrimaryButton text="Apply" classes="!p-3 flex-1 rounded-md" />
+        <PrimaryButton text={fetchWord('discard', lang)} classes='!p-3 flex-1 !text-primary bg-[#F9F9F9] rounded-md' />
+        <PrimaryButton text={fetchWord('Apply', lang)} classes="!p-3 flex-1 rounded-md" />
       </div>
-      {/* <CategoryMostPopular title={fetchWord('Most_Popular', lang)} /> */}
     </aside>
   );
 };

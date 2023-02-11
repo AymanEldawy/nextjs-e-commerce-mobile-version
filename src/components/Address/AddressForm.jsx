@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { InputFieldMobile } from './../Forms/InputFieldMobile';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from './../../lang/fetchWord';
 
 export const AddressForm = ({ title }) => {
+  const { lang } = useContext(LanguageContext);
   const [addressName, setAddressName] = useState('');
   const [addressDetails, setAddressDetails] = useState('');
 
@@ -16,13 +19,13 @@ export const AddressForm = ({ title }) => {
         value={addressName}
         handleChange={(e) => setAddressName(e.target.value)}
         type="text"
-        label="Address name"
+        label={fetchWord('Address_Name', lang)}
       />
       <InputFieldMobile
         value={addressDetails}
         handleChange={(e) => setAddressDetails(e.target.value)}
         type="text"
-        label="Address details"
+        label={fetchWord('Address_Details', lang)}
       />
       <PrimaryButton text={title} classes="mt-auto w-full !p-4 rounded-md" />
     </form>
