@@ -20,7 +20,7 @@ const NewPassword = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mobile-container pt-12">
         <figure className="full-image-login flex-1">
           <Image
             src="/images/login.jpg"

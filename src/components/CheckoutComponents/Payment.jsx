@@ -3,6 +3,7 @@ import { LanguageContext } from './../../context/LangContext';
 import { PaymentCardVisa } from './../PaymentCardVisa/PaymentCardVisa';
 import Image from 'next/image';
 import { AddNewVisaCard } from './AddNewVisaCard';
+import { fetchWord } from './../../lang/fetchWord';
 export const Payment = ({ nextStageHandler }) => {
   const { lang } = useContext(LanguageContext);
   return (
@@ -16,7 +17,7 @@ export const Payment = ({ nextStageHandler }) => {
       </div>
       <div className="border border-[#EFEFEF] my-6" />
       <div className="flex flex-col items-center justify-center gap-6 mb-6">
-        <small className="text-primary">Scan another card</small>
+        <small className="text-primary">{fetchWord('Scan another card', lang)}</small>
         <Image src="/images/scan.png" alt="Scan" height={97} width={124} />
       </div>
       <AddNewVisaCard onClick={nextStageHandler} />

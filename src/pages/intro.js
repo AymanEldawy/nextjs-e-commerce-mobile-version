@@ -52,7 +52,7 @@ const Intro = () => {
   }, [stage]);
   return (
     <div className="mobile-container">
-      <div className="intro flex flex-col justify-center items-center h-full">
+      <div className="intro flex flex-col justify-center items-center h-full pt-12">
         <figure>
           <Image
             src={stageContent?.img}

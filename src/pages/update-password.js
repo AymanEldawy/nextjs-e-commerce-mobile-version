@@ -21,7 +21,7 @@ const UpdatePassword = () => {
       </Head>
 
       <div className="mobile-container">
-        <div className="flex gap-4 flex-col">
+        <div className="flex gap-4 flex-col mt-12">
           <div className="">
             <h1 className="text-2xl mb-4 font-semibold">{fetchWord('Update Password', lang)}</h1>
             <p className="text-sm mb-4 text-[#00000099]">

@@ -24,7 +24,7 @@ export default function Signup() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="mobile-container">
-        <div className="flex gap-4 flex-col">
+        <div className="flex gap-4 flex-col mt-12">
           <div className="">
             <h1 className="text-2xl mb-4 font-semibold">
               {fetchWord('Create an account', lang)}
