@@ -64,7 +64,7 @@ const Profile = ({ closeMenu, menuOpened }) => {
   ];
   return (
     <Layout title={fetchWord('my_account', lang)} full>
-      <aside className={`flex flex-col bg-white h-screen`}>
+      <aside className={`flex flex-col bg-white min-h-screen overflow-auto pb-12`}>
         <div
           className="min-h-[170px] bg-primary flex items-end"
           onClick={() => setFakeLogin((prev) => !prev)}
